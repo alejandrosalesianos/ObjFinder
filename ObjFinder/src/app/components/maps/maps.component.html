@@ -20,12 +20,12 @@
 
 <mat-form-field appearance="fill">
     <mat-label>Nombre Objeto </mat-label>
-    <input matInput name="name" [(ngModel)]="objeto">
+    <input matInput name="nombre Objeto" [(ngModel)]="objeto">
   </mat-form-field>
   <br/>
   <mat-form-field appearance="fill">
     <mat-label>Tipos de objeto</mat-label>
-    <mat-select name="id" [(ngModel)]="id">
+    <mat-select name="Categoria" [(ngModel)]="id">
       <mat-option *ngFor="let categoria of listasList" [value]="categoria.name">
         {{categoria.name}}
       </mat-option>
@@ -33,9 +33,16 @@
   </mat-form-field>
   <br/>
   <mat-form-field appearance="fill">
+    <mat-label>Fecha encuentro/perdida Objeto</mat-label>
+    <input matInput type="datetime-local" [(ngModel)]="fecha">
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
     <mat-label>Descripción</mat-label>
     <textarea matInput name="descripcion" [(ngModel)]="descripcion"></textarea>
   </mat-form-field>
+  
 <br>
 <input type="text" placeholder="Coordenadas" [(ngModel)]="address" /> 
 <button (click)="searchAddress()">Localizar</button>

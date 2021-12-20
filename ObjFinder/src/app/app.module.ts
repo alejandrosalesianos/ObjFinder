@@ -19,7 +19,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { LoginComponent } from './components/login/login.component';
 import { MaterialImportsModule } from './modules/material-imports.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -42,7 +43,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     GoogleMapsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

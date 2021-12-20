@@ -1,6 +1,8 @@
+import { Time } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Timestamp } from 'firebase/firestore';
 import { catchError, map, of } from 'rxjs';
 import { Observable, } from 'rxjs';
 import { Categorias } from 'src/app/interface/categorias.interface';
@@ -19,8 +21,9 @@ export class MapsComponent implements OnInit {
   objeto!: string[];
   apiLoaded: Observable<boolean>;
   address: string = '';
+  fecha!: Timestamp;
 
-  id: string[] = [];
+  id!: string;
   descripcion: string[] = [];
   fundacionDonBoscoLatLng: google.maps.LatLngLiteral = {lat: 37.36133765325532, lng: -5.964321690581096};
   markerOptions: google.maps.MarkerOptions = {
@@ -76,6 +79,7 @@ export class MapsComponent implements OnInit {
     name: this.objeto,
     categoria: this.id,
     descripcion: this.descripcion,
-    location: address});
+    location: address,
+    fecha: this.fecha});
 }
 }
