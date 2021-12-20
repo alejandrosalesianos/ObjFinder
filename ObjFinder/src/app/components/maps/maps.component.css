@@ -1,0 +1,10 @@
+mat-toolbar{
+
+    background-color: rgb(27, 163, 61);
+    color:white;
+    font-size: large;
+}
+img{
+    padding-left: 10px;
+    padding-right: 10px;
+}

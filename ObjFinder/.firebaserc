@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "objetos-perdidos-2fb6c": {
+      "hosting": {
+        "ObjFinder": [
+          "objetos-perdidos-2fb6c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "objetos-perdidos-2fb6c"
+  }
+}
