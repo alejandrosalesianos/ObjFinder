@@ -1,0 +1,17 @@
+<p>
+    <mat-toolbar>
+      <span>ObjFinder</span>
+      <img [src]="getPhotoUrl()" style="width: 50px; height: 50px; border-radius: 100%;">
+      <p>{{getEmail()}}</p>
+      <a [routerLink]="['/map']" routerLinkActive="active"><p style="left: 10px;">Registrar Objeto</p></a>
+    </mat-toolbar>
+  </p>
+
+  <h1>Lista de objetos encontrados</h1>
+  <div *ngFor="let found of listaFound">
+    <li>{{found.name}}</li>
+  </div>
+  <h1>Lista de objetos perdidos</h1>
+  <div *ngFor="let perdido of listaLost">
+    <li>{{perdido.name}}</li>
+  </div>

@@ -21,13 +21,15 @@ import { MaterialImportsModule } from './modules/material-imports.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ObjetosComponent } from './components/objetos/objetos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MapsComponent,
-    LoginComponent
+    LoginComponent,
+    ObjetosComponent
   ],
   imports: [
     BrowserModule,
