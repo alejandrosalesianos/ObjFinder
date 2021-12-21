@@ -4,7 +4,36 @@ mat-toolbar{
     color:white;
     font-size: large;
 }
+body{
+    background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);
+}
 img{
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.vicente{
+    margin-top: 20px;
+    margin-right: 200px;
+}
+
+.jaime{
+    margin-top: 20px;
+}
+.campo{
+    background-color: aliceblue;
+}
+.fondo{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    justify-self: center;
+}
+
+.crear{
+    margin-left: 200px;
 }

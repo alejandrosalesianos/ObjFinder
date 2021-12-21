@@ -1,59 +1,73 @@
-<p>
-  <mat-toolbar>
-    <span>ObjFinder</span>
-    <img [src]="getPhotoUrl()" style="width: 50px; height: 50px; border-radius: 100%;">
-    <p>{{getEmail()}}</p>
-  </mat-toolbar>
-</p>
-<mat-form-field appearance="fill">
-  <mat-label>Categorias</mat-label>
-  <mat-select name="tipo" [(ngModel)]="tipo">
-    <mat-option value="Perdido">
-      Perdido
-    </mat-option>
-    <mat-option value="Encontrado">
-      Encontrado
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<br/>
+<body>
+  <p>
+    <mat-toolbar>
+      <span>ObjFinder</span>
+      <img [src]="getPhotoUrl()" style="width: 50px; height: 50px; border-radius: 100%;">
+      <p>{{getEmail()}}</p>
+    </mat-toolbar>
+  </p>
 
-<mat-form-field appearance="fill">
-    <mat-label>Nombre Objeto </mat-label>
-    <input matInput name="nombre Objeto" [(ngModel)]="objeto">
-  </mat-form-field>
-  <br/>
-  <mat-form-field appearance="fill">
-    <mat-label>Tipos de objeto</mat-label>
-    <mat-select name="Categoria" [(ngModel)]="id">
-      <mat-option *ngFor="let categoria of listasList" [value]="categoria.name">
-        {{categoria.name}}
+  <div class="fondo">
+  <div class="vicente">
+  <mat-form-field appearance="fill" class="campo">
+    <mat-label>Categorias</mat-label>
+    <mat-select name="tipo" [(ngModel)]="tipo">
+      <mat-option value="Perdido">
+        Perdido
+      </mat-option>
+      <mat-option value="Encontrado">
+        Encontrado
       </mat-option>
     </mat-select>
   </mat-form-field>
   <br/>
-  <mat-form-field appearance="fill">
-    <mat-label>Fecha encuentro/perdida Objeto</mat-label>
-    <input matInput type="datetime-local" [(ngModel)]="fecha">
-    <mat-datepicker #picker1></mat-datepicker>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Descripción</mat-label>
-    <textarea matInput name="descripcion" [(ngModel)]="descripcion"></textarea>
-  </mat-form-field>
-  
-<br>
-<input type="text" placeholder="Coordenadas" [(ngModel)]="address" /> 
-<button (click)="searchAddress()">Localizar</button>
-<div *ngIf="apiLoaded | async">
-    <google-map
-      [center]="fundacionDonBoscoLatLng">
-      <map-marker
-              (mapDragend)="updateLocationMarker($event)"
-              [position]="fundacionDonBoscoLatLng"
-              [options]="markerOptions"></map-marker>
-    </google-map>
+
+ 
+  <mat-form-field appearance="fill" class="campo">
+      <mat-label>Nombre Objeto </mat-label>
+      <input matInput name="nombre Objeto" [(ngModel)]="objeto">
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="fill" class="campo">
+      <mat-label>Tipos de objeto</mat-label>
+      <mat-select name="Categoria" [(ngModel)]="id">
+        <mat-option *ngFor="let categoria of listasList" [value]="categoria.name">
+          {{categoria.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="fill" class="campo">
+      <mat-label>Fecha encuentro/perdida Objeto</mat-label>
+      <input matInput type="datetime-local" [(ngModel)]="fecha">
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="campo">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput name="descripcion" [(ngModel)]="descripcion"></textarea>
+    </mat-form-field>
+    
   </div>
-  <br>
-  <button mat-raised-button color="primary"(click)="crearObjeto()">Crear Publicación</button>
+    
+  <div class="jaime">
+    <input type="text" placeholder="Coordenadas" [(ngModel)]="address" /> 
+    <button (click)="searchAddress()">Localizar</button>
+    <div *ngIf="apiLoaded | async">
+        <google-map
+          [center]="fundacionDonBoscoLatLng">
+          <map-marker
+                  (mapDragend)="updateLocationMarker($event)"
+                  [position]="fundacionDonBoscoLatLng"
+                  [options]="markerOptions"></map-marker>
+        </google-map>
+        
+        
+    </div>
+    <br>
+    <button class="crear" mat-raised-button color="primary"(click)="crearObjeto()">Crear Publicación</button>
+  </div>
+    <br>
+</div>
+</body>
+
